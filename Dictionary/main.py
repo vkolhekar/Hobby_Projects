@@ -6,6 +6,7 @@ data = json.load(open("data.json"))
 
 def translate_word(word):
     flag=0
+    word = word.lower()
     for k in data:
         if(word==k):
             for i in data[k]:
@@ -26,6 +27,7 @@ def main():
         check_flag=0
         while(check_flag==0):
             re_enter=input("Check another word? (Y/N): ")
+            print("\n")
             if(re_enter=='y'):
                 check_flag=1
                 x_it=0
