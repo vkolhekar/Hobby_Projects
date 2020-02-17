@@ -1,7 +1,21 @@
 import json
+import difflib
 
+from difflib import get_close_matches
 data = json.load(open("data.json"))
 
+def suggestion(word):
+    suggested_list = get_close_matches(word,data.keys())
+    print("Did you mean '"+suggested_list[0]+"' instead? (Y/N) ")
+    primary = input()
+    if(primary=='y'or primary=='Y'):
+        print("\n"+suggested_list[0]+":")
+        translate_word(suggested_list[0])
+    else:
+        print("\nRecommended: ")
+        for i in suggested_list:
+            print(i)
+    print("\n")
 
 
 def translate_word(word):
@@ -16,6 +30,8 @@ def translate_word(word):
             break
     if(flag==0):
         print("\nCould not loacate word. Kindly check your spelling.")
+        suggestion(word)
+
 
 
 def main():
