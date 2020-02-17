@@ -1,5 +1,6 @@
 import json
 import difflib
+import sys
 
 from difflib import get_close_matches
 data = json.load(open("data.json"))
@@ -35,21 +36,24 @@ def translate_word(word):
 
 
 def main():
+    word=str(sys.argv[1])
     x_it=0
     print("\n\n\t\t\t   WELCOME TO WEBSTER'S DICTIONARY\n\n")
     while(x_it==0):
         
-        words = str(input("Enter Word: "))
-        translate_word(words)
+        
+        translate_word(word)
         check_flag=0
         while(check_flag==0):
             re_enter=input("Check another word? (Y/N): ")
             print("\n")
             if(re_enter=='y'):
                 check_flag=1
+                word = str(input("Enter Word: "))
                 x_it=0
             elif(re_enter=='Y'):
                 check_flag=1
+                word = str(input("Enter Word: "))
                 x_it=0
             elif(re_enter=='n'):
                 check_flag=1
