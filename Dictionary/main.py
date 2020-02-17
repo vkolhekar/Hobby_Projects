@@ -36,8 +36,9 @@ def translate_word(word):
 
 def main():
     x_it=0
+    print("\n\n\t\t\t   WELCOME TO WEBSTER'S DICTIONARY\n\n")
     while(x_it==0):
-        print("\n\n\t\t\t   WELCOME TO WEBSTER'S DICTIONARY\n\n")
+        
         words = str(input("Enter Word: "))
         translate_word(words)
         check_flag=0
