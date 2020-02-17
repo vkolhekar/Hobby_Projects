@@ -30,7 +30,7 @@ def translate_word(word):
             flag=1
             break
     if(flag==0):
-        print("\nCould not loacate word. Kindly check your spelling.")
+        print("\nCould not loacate word. Kindly check your spelling.\n")
         suggestion(word)
 
 
