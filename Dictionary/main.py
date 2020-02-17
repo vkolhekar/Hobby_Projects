@@ -6,8 +6,8 @@ data = json.load(open("data.json"))
 
 def suggestion(word):
     suggested_list = get_close_matches(word,data.keys())
-    print("Did you mean '"+suggested_list[0]+"' instead? (Y/N) ")
-    primary = input()
+    primary = input("Did you mean '"+suggested_list[0]+"' instead? (Y/N) ")
+   
     if(primary=='y'or primary=='Y'):
         print("\n"+suggested_list[0]+":")
         translate_word(suggested_list[0])
